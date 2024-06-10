@@ -149,8 +149,8 @@ rule pairwise_1k_ecoli_cluster_categories:
     output:
         "ecoli.1000.pairwise.clusters.categories.csv",
     shell: """
-        ./cluster-out-to-categories.py {input.samples} {input.clusters} \
-            -o {output}
+        sourmash scripts cluster_to_categories {input.samples} \
+            {input.clusters} -o {output}
     """
 
 rule pairwise_1k_ecoli_plot:
